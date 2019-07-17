@@ -17,12 +17,12 @@ rm(list=ls())
 #set working directory: we skip this step and let the reader set their own working directory. 
 
 #we check if the source file is loaded onto the wd of the reader, if not, we download it and unzip the file:
-#if(!file.exists("activity.csv")) {
- #       tempfile <- tempfile()
-  #      download.file("http://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip",destfile = tempfile)
-   #     unzip(tempfile)
-    #    unlink(tempfile)
-#}
+if(!file.exists("activity.csv")) {
+        tempfile <- tempfile()
+        download.file("http://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip",destfile = tempfile)
+        unzip(tempfile)
+        unlink(tempfile)
+}
 
 df_act <- read.csv("activity.csv", header = TRUE)
 
